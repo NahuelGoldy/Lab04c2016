@@ -6,4 +6,7 @@
     <string name="navigation_drawer_close">Ocultar Opciones</string>
 
     <string name="action_settings">Configuracion</string>
+    <string name="resultado_busqueda">Resultado de su busqueda:</string>
+
+    <string name="menu_reservar_tittle">Generar reserva</string>
 </resources>

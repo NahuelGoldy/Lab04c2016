@@ -15,7 +15,7 @@ import dam.isi.frsf.utn.edu.ar.laboratorio04.modelo.Departamento;
 public class DepartamentoAdapter extends ArrayAdapter<Departamento> {
     private LayoutInflater inflater;
     private Context contexto;
-
+    private List<Departamento> listaDeptos;
     public DepartamentoAdapter(Context contexto, List<Departamento> items) {
         super(contexto, R.layout.fila, items);
         inflater = LayoutInflater.from(contexto);
@@ -35,6 +35,6 @@ public class DepartamentoAdapter extends ArrayAdapter<Departamento> {
         TextView txtCapacidad = (TextView) row.findViewById(R.id.capacidadMax);
         txtCapacidad.setText(this.getItem(position).getCapacidadMaxima()+".");
         return (row);
-
     }
+
 }

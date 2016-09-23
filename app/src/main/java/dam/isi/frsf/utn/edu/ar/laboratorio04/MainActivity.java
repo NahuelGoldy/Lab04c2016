@@ -35,10 +35,8 @@ public class MainActivity extends AppCompatActivity
     private Button btnBuscar;
     private Spinner cmbCiudad;
     private ArrayAdapter<Ciudad> adapterCiudad;
-    private SeekBar skPrecioMin;
-    private TextView tvPrecioMinimo;
-    private TextView tvPrecioMaximo;
-    private SeekBar skPrecioMax;
+    private SeekBar skPrecioMin,skPrecioMax;
+    private TextView tvPrecioMinimo,tvPrecioMaximo;
     private EditText txtHuespedes;
     private Switch swFumadores;
     private FormBusqueda frmBusq;
@@ -77,6 +75,8 @@ public class MainActivity extends AppCompatActivity
 
         btnBuscar = (Button) findViewById(R.id.btnBuscar);
         btnBuscar.setOnClickListener(btnBusarListener);
+
+
     }
 
     private View.OnClickListener btnBusarListener = new View.OnClickListener() {
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
             Ciudad item = (Ciudad) parent.getItemAtPosition(pos);
             frmBusq.setCiudad(item);
-            Log.d("MainActivity","ciudad seteada "+item);
+         //   Log.d("MainActivity","ciudad seteada "+item);
         }
         public void onNothingSelected(AdapterView<?> parent) {
         }
