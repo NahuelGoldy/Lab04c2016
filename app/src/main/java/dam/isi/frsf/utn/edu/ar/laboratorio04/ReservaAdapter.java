@@ -34,7 +34,7 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
         {
             row = inflater.inflate(R.layout.fila_reserva, parent, false);
         }
-        cargarVariables(row);
+        cargarVariables(row,position);
 /*
 
         TextView txtPrecio = (TextView) row.findViewById(R.id.precio);
@@ -46,7 +46,7 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
     /**
      * Inicializa los elementos de una fila
      */
-    private void cargarVariables(View row)
+    private void cargarVariables(View row,int position)
     {
         tvPrecio = (TextView) row.findViewById(R.id.precio_reserva);
         tvCiudad = (TextView) row.findViewById(R.id.ciudad_reserva);
@@ -55,5 +55,19 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
         tvDepartamento_nombre = (TextView) row.findViewById(R.id.departamento_nombre_reserva);
         tvUsuario = (TextView) row.findViewById(R.id.usuario_reserva);
         cbReservaConfirmada = (CheckBox) row.findViewById(R.id.checkBox_reserva_confirmada);
+
+
+        tvPrecio.setText(this.getItem(position).getPrecio().toString());
+        /*
+        tvfechaInicio.setText(this.getItem(position).getFechaInicio().toString());
+        tvFechaFin.setText(this.getItem(position).getFechaFin().toString());
+        tvUsuario.setText(this.getItem(position).getUsuario().toString());
+        cbReservaConfirmada.setChecked(this.getItem(position).getConfirmada());
+        */
+        /*
+        tvDepartamento_nombre.setText(this.getItem(position).getAlojamiento().getDescripcion());
+        tvCiudad.setText(this.getItem(position).getAlojamiento().getCiudad().getNombre());
+        */
     }
+
 }
