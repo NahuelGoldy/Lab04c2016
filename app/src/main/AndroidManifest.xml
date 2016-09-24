@@ -19,7 +19,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".ListaDepartamentosActivity" />
-        <activity android:name=".VerReservasActivity"></activity>
+        <activity android:name=".ListarReservasActivity" />
+        <activity
+            android:name=".AgregarReservasActivity"
+            android:label="@string/title_activity_agregar_reservas"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

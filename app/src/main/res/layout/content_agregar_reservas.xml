@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_agregar_reservas"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="dam.isi.frsf.utn.edu.ar.laboratorio04.AgregarReservasActivity"
+    tools:showIn="@layout/activity_agregar_reservas"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <TextView
+        android:text="Usted va a realizar la reserva para el siguiente departamento: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTitulo"
+        android:gravity="center"
+        android:layout_weight="0.84" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp">
+
+        <TextView
+            android:text="Nombre Departamento:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvNombreDepto"
+            android:layout_weight="0.32" />
+
+        <TextView
+            android:text="Cantidad Habitaciones:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvCantHabitaciones"
+            android:layout_weight="0.32" />
+
+        <TextView
+            android:text="Cantidad de camas: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvCantCamas"
+            android:layout_weight="0.32" />
+
+        <TextView
+            android:text="Ciudad: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvCiudadDepartamento"
+            android:layout_weight="0.32" />
+
+        <TextView
+            android:text="Precio: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvPrecio"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.84"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:text="Ingrese la fecha de ingreso: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvFechaInicio"
+            android:gravity="center"/>
+
+        <DatePicker
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:id="@+id/dpFechaInicio"
+            style="@android:style/Widget.DatePicker" />
+
+        <TextView
+            android:text="Ingrese la fecha de salida:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvFechaFin"
+            android:gravity="center"/>
+
+        <DatePicker
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:id="@+id/dpFechaFin"
+            style="@android:style/Widget.DatePicker" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.84">
+
+        <Button
+            android:text="Cancelar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bCancelar"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="Confirmar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bConfirmar"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -3,7 +3,6 @@ package dam.isi.frsf.utn.edu.ar.laboratorio04;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,8 +13,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.Inflater;
 
+import dam.isi.frsf.utn.edu.ar.laboratorio04.modelo.Reserva;
 import dam.isi.frsf.utn.edu.ar.laboratorio04.utils.BuscarDepartamentosTask;
 import dam.isi.frsf.utn.edu.ar.laboratorio04.modelo.Departamento;
 import dam.isi.frsf.utn.edu.ar.laboratorio04.utils.BusquedaFinalizadaListener;
@@ -29,7 +28,7 @@ public class ListaDepartamentosActivity extends AppCompatActivity implements Bus
     private List<Departamento> lista;
     private MenuInflater menuInflater;
     private Intent intentVerReservas;
-
+    private List<Reserva> listaReservas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,8 +121,14 @@ public class ListaDepartamentosActivity extends AppCompatActivity implements Bus
      */
     private void accionMenuGenerarReserva(Departamento deptoAReservar)
     {
-        intentVerReservas = new Intent(this, VerReservasActivity.class);
+        intentVerReservas = new Intent(this, AgregarReservasActivity.class);
         intentVerReservas.putExtra("nuevaReserva",deptoAReservar);
+        /*
+        if(listaReservas != null) // Si la lista de reservas no es nula significa que el usuario ya tenia reservas hechas asi que se las mando para que las vea
+        {
+            intentVerReservas.putIntegerArrayListExtra("listaReservas",(ArrayList) listaReservas);
+        }
+        */
         startActivityForResult(intentVerReservas,1);
     }
 
@@ -152,12 +157,25 @@ public class ListaDepartamentosActivity extends AppCompatActivity implements Bus
                 }
                 break;
             }
+            case 2: // Se ejecuta cuando el usuario vuelve a la pantalla anterior
+            {
+              //  guardarListaReservas(data);
+                break;
+            }
             default:
             {
-                System.out.println("SE PRODUJO UN ERROR");
                 break;
             }
         }
     }
+
+    /**
+     * Cuando el usuario hace back y vuelve al a lista, almaceno en memoria su lista de reservas en el caso de que vuelva a reservar
+     */
+    private void guardarListaReservas(Intent data)
+    {
+        listaReservas = (ArrayList) data.getIntegerArrayListExtra("listaReservas");
+    }
+
 
 }

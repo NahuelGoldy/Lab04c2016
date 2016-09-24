@@ -40,6 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Reserva Confirmada"
+            android:clickable="false"
             android:id="@+id/checkBox_reserva_confirmada" />
 
     </LinearLayout>

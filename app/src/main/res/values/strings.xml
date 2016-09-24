@@ -9,4 +9,5 @@
     <string name="resultado_busqueda">Resultado de su busqueda:</string>
 
     <string name="menu_reservar_tittle">Generar reserva</string>
+    <string name="title_activity_agregar_reservas">AgregarReservasActivity</string>
 </resources>

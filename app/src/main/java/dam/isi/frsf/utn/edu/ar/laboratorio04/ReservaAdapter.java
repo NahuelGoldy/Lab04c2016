@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import dam.isi.frsf.utn.edu.ar.laboratorio04.modelo.Departamento;
@@ -20,6 +21,8 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
     private List<Reserva> listaReservas;
     private TextView tvCiudad,tvfechaInicio,tvFechaFin,tvPrecio,tvUsuario,tvDepartamento_nombre;
     private CheckBox cbReservaConfirmada;
+    private DecimalFormat df = new DecimalFormat("#.##");
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     public ReservaAdapter(Context contexto, List<Reserva> items)
     {
         super(contexto, R.layout.fila_reserva, items);
@@ -57,17 +60,13 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
         cbReservaConfirmada = (CheckBox) row.findViewById(R.id.checkBox_reserva_confirmada);
 
 
-        tvPrecio.setText(this.getItem(position).getPrecio().toString());
-        /*
-        tvfechaInicio.setText(this.getItem(position).getFechaInicio().toString());
-        tvFechaFin.setText(this.getItem(position).getFechaFin().toString());
-        tvUsuario.setText(this.getItem(position).getUsuario().toString());
+        tvPrecio.setText("Precio: $" + df.format( this.getItem(position).getPrecio()));
+        tvfechaInicio.setText("Fecha ingreso: "+sdf.format( this.getItem(position).getFechaInicio() ));
+        tvFechaFin.setText("Fecha egreso: "+sdf.format( this.getItem(position).getFechaFin() ));
         cbReservaConfirmada.setChecked(this.getItem(position).getConfirmada());
-        */
-        /*
-        tvDepartamento_nombre.setText(this.getItem(position).getAlojamiento().getDescripcion());
-        tvCiudad.setText(this.getItem(position).getAlojamiento().getCiudad().getNombre());
-        */
+        tvDepartamento_nombre.setText("Numero de departamento: "+this.getItem(position).getAlojamiento().getDescripcion());
+        tvCiudad.setText("Ciudad: "+this.getItem(position).getAlojamiento().getCiudad().getNombre());
+        // tvUsuario.setText(this.getItem(position).getUsuario().toString());
     }
 
 }
