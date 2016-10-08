@@ -172,7 +172,11 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_ofertas:
                 break;
             case R.id.nav_perfil:
+            {
+                //TODO implementar preferencias
+                //startActivity(new Intent(this, PreferenciasActivity.class));
                 break;
+            }
             case R.id.nav_reservas:
             {
                 startActivity(new Intent(this, ListarReservasActivity.class));

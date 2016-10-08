@@ -24,7 +24,7 @@ public class ListarReservasActivity extends AppCompatActivity {
         lvReservas = (ListView) findViewById(R.id.lvListaReservas);
     }
 
-    //TODO implementar el onStart()
+
     @Override
     public void onStart() {
         super.onStart();
