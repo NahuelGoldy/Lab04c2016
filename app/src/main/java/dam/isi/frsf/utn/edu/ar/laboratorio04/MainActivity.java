@@ -174,7 +174,10 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_perfil:
                 break;
             case R.id.nav_reservas:
+            {
+                startActivity(new Intent(this, ListarReservasActivity.class));
                 break;
+            }
             case R.id.nav_destinos:
                 break;
 

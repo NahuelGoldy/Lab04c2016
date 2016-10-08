@@ -41,14 +41,6 @@ public class AgregarReservasActivity extends AppCompatActivity implements View.O
         deptoAReservar = (Departamento) intentDeptoAReservar.getExtras().get("nuevaReserva");
         cargarVariables();
         setearDatosDepartamento();
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         bCancelar.setOnClickListener(this);
         bConfirmar.setOnClickListener(this);
     }
@@ -84,8 +76,8 @@ public class AgregarReservasActivity extends AppCompatActivity implements View.O
             {
                 generarReserva();
                 intentListarReservasActivity = new Intent(this, ListarReservasActivity.class);
-                intentListarReservasActivity.putIntegerArrayListExtra("listaReservas",(ArrayList) listaReservas);
-                startActivityForResult(intentListarReservasActivity,1);
+                //intentListarReservasActivity.putIntegerArrayListExtra("listaReservas",(ArrayList) listaReservas);
+                startActivity(intentListarReservasActivity);
                 break;
             }
             case R.id.bCancelar:
@@ -104,51 +96,15 @@ public class AgregarReservasActivity extends AppCompatActivity implements View.O
         nuevaReserva = new Reserva();
         nuevaReserva.setPrecio(deptoAReservar.getPrecio());
         nuevaReserva.setAlojamiento(deptoAReservar);
-        nuevaReserva.setConfirmada(true);
+        nuevaReserva.setConfirmada(false);
         nuevaReserva.setFechaInicio(fechaInicio);
         nuevaReserva.setFechaFin(fechaFin);
 
-        listaReservas.add(nuevaReserva);
+        //listaReservas.add(nuevaReserva);
+        ListarReservasActivity.listaReservas.add(nuevaReserva);
+
         // TODO TERMINAR DE CARGAR LA RESERVA CON LA LOGICA CORRESPONDIENTE
 
         // TODO ASEGURAR QUE LA FECHA DE FIN ES MAYOR A LA DE INICIO
-    }
-    /**
-     * Metodo que se ejecuta cuando la aplicacion vuelve de ver las reservas
-     * @param requestCode
-     * @param resultCode
-     * @param data
-     */
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch(resultCode)
-        {
-            case RESULT_OK: // No hubo errores
-            {
-                switch (requestCode)
-                {
-                    case 1:
-                    {
-                        break;
-                    }
-                    default:
-                    {
-                        break;
-                    }
-                }
-                break;
-            }
-            case RESULT_CANCELED: // Se ejecuta cuando el usuario vuelve a la pantalla anterior, por lo tanto cierro esta pantalla y vuelvo
-            {
-                setResult(RESULT_OK);
-                System.out.println("PEPINO ATOMICO");
-                finish();
-                break;
-            }
-            default:
-            {
-                break;
-            }
-        }
     }
 }
