@@ -32,7 +32,7 @@ public class ListarReservasActivity extends AppCompatActivity {
         listAux.addAll(listaReservas);
         ReservaAdapter reservaAdapter = new ReservaAdapter(this, listAux);
         lvReservas.setAdapter(reservaAdapter);
-        //se muestra un toast corto
+        //se muestra un toast
         Toast toast = Toast.makeText(getApplicationContext(), "Se ha agregado una reserva a la lista", Toast.LENGTH_LONG);
         toast.show();
         //se crea y setea la alarma cada 15 segundos

@@ -23,8 +23,10 @@
         <activity
             android:name=".AgregarReservasActivity"
             android:label="@string/title_activity_agregar_reservas"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <receiver android:name=".AlarmaReceiver"></receiver>
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <receiver android:name=".AlarmaReceiver" />
+
     </application>
 
 </manifest>

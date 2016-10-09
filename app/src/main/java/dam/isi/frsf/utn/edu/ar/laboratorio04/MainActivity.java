@@ -2,6 +2,7 @@ package dam.isi.frsf.utn.edu.ar.laboratorio04;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.SwitchCompat;
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity
         btnBuscar = (Button) findViewById(R.id.btnBuscar);
         btnBuscar.setOnClickListener(btnBusarListener);
 
-
+        PreferenceManager.setDefaultValues(this, R.xml.preferencias, false);
     }
 
     private View.OnClickListener btnBusarListener = new View.OnClickListener() {
@@ -174,7 +175,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_perfil:
             {
                 //TODO implementar preferencias
-                //startActivity(new Intent(this, PreferenciasActivity.class));
+                //startActivity(new Intent(this, SettingsActivity.class));
                 break;
             }
             case R.id.nav_reservas:
