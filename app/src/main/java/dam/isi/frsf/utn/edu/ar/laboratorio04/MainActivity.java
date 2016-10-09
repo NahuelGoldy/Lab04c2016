@@ -174,13 +174,14 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_perfil:
             {
-                //TODO implementar preferencias
-                //startActivity(new Intent(this, SettingsActivity.class));
+                startActivity(new Intent(this, PreferenciasActivity.class));
                 break;
             }
             case R.id.nav_reservas:
             {
-                startActivity(new Intent(this, ListarReservasActivity.class));
+                Intent intentReservas = new Intent(this, ListarReservasActivity.class);
+                intentReservas.putExtra("mostrar_toast", false);
+                startActivity(intentReservas);
                 break;
             }
             case R.id.nav_destinos:

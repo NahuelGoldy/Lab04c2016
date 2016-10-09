@@ -17,6 +17,7 @@ public class ListarReservasActivity extends AppCompatActivity {
     private ListView lvReservas;
     private PendingIntent pendingIntent;
     private AlarmManager am;
+    private boolean mostrarToast = false;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +33,14 @@ public class ListarReservasActivity extends AppCompatActivity {
         listAux.addAll(listaReservas);
         ReservaAdapter reservaAdapter = new ReservaAdapter(this, listAux);
         lvReservas.setAdapter(reservaAdapter);
-        //se muestra un toast
-        Toast toast = Toast.makeText(getApplicationContext(), "Se ha agregado una reserva a la lista", Toast.LENGTH_LONG);
-        toast.show();
+
+        //se muestra un toast si se agregó una nueva reserva
+        Bundle bundle = getIntent().getExtras();
+        if(bundle.getBoolean("mostrar_toast")){
+            Toast toast = Toast.makeText(getApplicationContext(), "Se ha agregado una reserva a la lista", Toast.LENGTH_LONG);
+            toast.show();
+        }
+
         //se crea y setea la alarma cada 15 segundos
         Intent alarmIntent = new Intent(ListarReservasActivity.this, AlarmaReceiver.class);
         am = (AlarmManager) ListarReservasActivity.this.getSystemService(Context.ALARM_SERVICE);

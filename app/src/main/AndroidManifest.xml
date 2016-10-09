@@ -14,9 +14,14 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".PreferenciasActivity">
+            <intent-filer>
+                <action android:name=".PreferenciasActivity" />
+                <category android:name="android.intent.category.PREFERENCE" />
+            </intent-filer>
         </activity>
         <activity android:name=".ListaDepartamentosActivity" />
         <activity android:name=".ListarReservasActivity" />

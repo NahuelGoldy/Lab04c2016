@@ -77,6 +77,7 @@ public class AgregarReservasActivity extends AppCompatActivity implements View.O
                 generarReserva();
                 intentListarReservasActivity = new Intent(this, ListarReservasActivity.class);
                 //intentListarReservasActivity.putIntegerArrayListExtra("listaReservas",(ArrayList) listaReservas);
+                intentListarReservasActivity.putExtra("mostrar_toast", true);
                 startActivity(intentListarReservasActivity);
                 break;
             }
